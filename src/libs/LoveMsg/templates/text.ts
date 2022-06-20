@@ -19,7 +19,7 @@ export const textTemplate = (data: TextTemplateProps) => {
   }
   else {
     text += `
-如果我小楠宝贝还没起床呀！巴库就等着鱼崽起床给我说早安呦🤣
+如果我小楠宝贝还没起床呀！巴库就等着小楠宝贝起床给我说早安呦🤣
 嗯哼~，既然今天是${week}，就让你再睡会懒觉~下次可不能啦~😝\n`
   }
 
