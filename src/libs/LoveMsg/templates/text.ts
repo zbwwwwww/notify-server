@@ -52,11 +52,11 @@ ${sayLove.content}\n`
 『网易云音乐热评』${netEaseCloud.content}——${netEaseCloud.source}\n`
   }
 
-  // 添加一句一言
-  if (oneWord) {
-    text += `
-『一言』${oneWord.hitokoto}\n`
-  }
+//   // 添加一句一言
+//   if (oneWord) {
+//     text += `
+// 『一言』${oneWord.hitokoto}\n`
+//   }
 
   // 每日英语
   if (dayEnglish) {
