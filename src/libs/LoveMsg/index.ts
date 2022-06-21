@@ -23,6 +23,6 @@ export default function main() {
     drinkWater()
   } else {
     // 早安
-    drinkWater()
+    goodMorning()
   }
 }
