@@ -19,5 +19,10 @@ export const weekToday = () => {
   const week = dayjs().get('days')
   return WEEKS[week]
 }
+export const halfDayJudge  = () => {
+  const hour = dayjs().get('hour')
+  console.log('dayjs():hour' +hour)
+  return hour<12 ? '上午':'下午'
+}
 
 export default dayjs
