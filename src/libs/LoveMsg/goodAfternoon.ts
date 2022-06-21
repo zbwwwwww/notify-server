@@ -40,11 +40,11 @@ const getNews = async() => {
   }
 }
 export const goodAfternoon = async() => {
-
+  await getNews()
   let text = '小楠宝贝，今日份午安来喽:'
 
   text += `
-午睡前让我们来看看今日发生了哪些国家大事呢，请阅读今日头条新闻😝\n`
+午睡前让我们来看看今日发生了哪些国家大事呢，请阅读以上今日头条新闻↑😝\n`
   const template = {
     msgtype: 'text',
     text: {
@@ -52,5 +52,5 @@ export const goodAfternoon = async() => {
     },
   }
   await wxNotify(template)
-  await getNews()
+  
 }
