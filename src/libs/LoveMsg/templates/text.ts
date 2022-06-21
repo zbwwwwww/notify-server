@@ -23,17 +23,9 @@ export const textTemplate = (data: TextTemplateProps) => {
 嗯哼哼~今天可是${week}哦，上班别迟到了哦~`
   }
 
-  // 添加笑话
   if (caiHongpi) {
-    //     text += `
-    // 彩虹屁：
     text += `
 ${caiHongpi.content}\n`
-  }
-
-  if (sayLove) {
-    text += `
-${sayLove.content}\n`
   }
 
   // 诗句
