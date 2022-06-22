@@ -14,14 +14,12 @@ const remindDrinkWater = async () => {
     const dataSource = await Promise.allSettled([
       API.getSaylove(), // 土味情话
       API.getCaihongpi(), // 彩虹屁
+      API.getJoke(2), // 雷人笑话
     ])
     // 过滤掉异常数据
-    const [sayLove, caiHongpi] = dataSource.map((n) => (n.status === 'fulfilled' ? n.value : null))
-
-    console.log('sayLove', sayLove)
-    console.log('caiHongpi', caiHongpi)
-     // 工作日/休息日，需要排除节假日
-     const week = weekToday()
+    const [sayLove, caiHongpi, joke]:any= dataSource.map((n) => (n.status === 'fulfilled' ? n.value : null))
+    // 工作日/休息日，需要排除节假日
+    const week = weekToday()
      if (['星期六', '星期日'].includes(week)) {
        if(['上午'].includes(halfDay)){
          text += `周末快乐！！！😆今天的懒觉睡的还舒服咩~😝🤣今天是${week}，起床后记得喝一大杯水噢~😝，等一会会巴库就来陪你了哦!`
@@ -34,9 +32,14 @@ const remindDrinkWater = async () => {
         
       } else {
          text += `工作辛苦啦，繁忙之余不要忘记喝水水哦~😆\n`
-         if (sayLove) {
-           text += `放松一下，今日份土味情话请查收😘: \n${sayLove.content}\n`
-         }
+          if('上午' == halfDay && sayLove) {
+            text += `放松一下，今日份土味情话请查收😘: \n${sayLove.content}\n`
+          } else if ('下午'==halfDay && joke) {
+            text +=`还有一小时就要下班了噢，来听听笑话放松下吧！😘\n`
+            text += ` ${joke.map( n => `『${n.title}』${n.content}`).join('\n')}`
+            
+          }
+         
       }
       const template = {
         msgtype: 'text',
