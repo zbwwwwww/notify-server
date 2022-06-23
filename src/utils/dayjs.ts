@@ -24,6 +24,7 @@ export const halfDayJudge  = () => {
   const minute = dayjs().minute()
   const diff = (new Date(null, null, null, 17, 30) - new Date(null, null, null, hour, minute)) / 60000
   console.log('dayjs():hour' +hour)
+  console.log('diff:'+diff)
   const shangxiawu = hour<12? '上午':'下午'
   const data:any = [diff,shangxiawu]
   return data
