@@ -24,7 +24,7 @@ export const halfDayJudge  = () => {
   const minute = dayjs().minute()
   const time = ''+hour+':'+minute
   console.log('time:'+time)
-  console.log('diff'+dayjs('19:50').diff('19:30'))
+  console.log('diff'+dayjs('19:50').diff('19:30','minutes'))
   console.log('dayjs():hour' +hour)
   return hour<12 ? '上午':'下午'
 }
