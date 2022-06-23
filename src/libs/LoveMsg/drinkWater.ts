@@ -49,7 +49,7 @@ const remindDrinkWater = async () => {
         },
       }
       console.log('drinkWater', template)
-     wxNotify(template)
+//      wxNotify(template)
   } catch (error) {
     console.log('drinkWater:err', error)
   }
