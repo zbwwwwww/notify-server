@@ -20,7 +20,7 @@ export const weekToday = () => {
   return WEEKS[week]
 }
 export const halfDayJudge  = () => {
-  const hour = dayjs().get('hour')
+  const hour = dayjs().hour()
   console.log('dayjs():hour' +hour)
   return hour<12 ? '上午':'下午'
 }
