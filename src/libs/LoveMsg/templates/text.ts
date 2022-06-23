@@ -23,30 +23,30 @@ export const textTemplate = (data: TextTemplateProps) => {
 嗯哼哼~今天可是${week}哦，上班别迟到了哦~`
   }
 
-  if (caiHongpi) {
-    text += `
-${caiHongpi.content}\n`
-  }
+//   if (caiHongpi) {
+//     text += `
+// ${caiHongpi.content}\n`
+//   }
 
   // 诗句
   if (songLyrics) {
-    text += `
+    text += `请欣赏今日宋词：
 『${songLyrics.source}』${songLyrics.content}\n`
   }
 
   if (oneMagazines) {
-    text += `
+    text += `请欣赏ONE杂志语录：\n
 『ONE杂志』${oneMagazines.word}\n`
   }
 
   if (netEaseCloud) {
-    text += `
+    text += `今日份网易云音乐热评：\n
 『网易云音乐热评』${netEaseCloud.content}————${netEaseCloud.source}\n`
   }
 
   // 每日英语
   if (dayEnglish) {
-    text += `
+    text += `每天一句英语学习：\n
 『每日英语（${dayjs(dayEnglish.date).format('ll')}』${dayEnglish.content}`
   }
 
