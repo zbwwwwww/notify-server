@@ -8,6 +8,7 @@ import { weekToday ,halfDayJudge} from '../../utils/dayjs'
 // 美丽短句
 const remindDrinkWater = async () => {
   const halfDay = halfDayJudge()
+  console.log("halfDay:"+halfDay)
   let text = `${halfDay}好呀，我的小楠宝贝☀️ ~`
   try {
     // 并行请求，优响相应
