@@ -22,7 +22,7 @@ export const weekToday = () => {
 export const halfDayJudge  = () => {
   const hour = dayjs().hour()+8
   const minute = dayjs().minute()
-  const diff = (new Date(null, null, null, 19, 30) - new Date(null, null, null, hour, minute)) / 60000
+  const diff = (new Date(null, null, null, 20, 30) - new Date(null, null, null, hour, minute)) / 60000
   console.log(diff)
   console.log('dayjs():hour' +hour)
   return hour<12 ? '上午':'下午'
