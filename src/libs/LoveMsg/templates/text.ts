@@ -12,6 +12,7 @@ export const textTemplate = (data: TextTemplateProps) => {
 
   // 工作日/休息日，需要排除节假日
   const week = weekToday()
+  console.log("week"+week);
   if (['星期六', '星期日'].includes(week)) {
      text += `
 如果我小楠宝贝还没起床呀！巴库就等着小楠宝贝起床给我说早安呦🤣
@@ -30,23 +31,23 @@ export const textTemplate = (data: TextTemplateProps) => {
 
   // 诗句
   if (songLyrics) {
-    text += `请欣赏今日宋词：
+    text += `\n请欣赏今日宋词：
 『${songLyrics.source}』${songLyrics.content}\n`
   }
 
   if (oneMagazines) {
-    text += `请欣赏ONE杂志语录：\n
+    text += `\n请欣赏ONE杂志语录：
 『ONE杂志』${oneMagazines.word}\n`
   }
 
   if (netEaseCloud) {
-    text += `今日份网易云音乐热评：\n
+    text += `\n今日份网易云音乐热评：
 『网易云音乐热评』${netEaseCloud.content}————${netEaseCloud.source}\n`
   }
 
   // 每日英语
   if (dayEnglish) {
-    text += `每天一句英语学习：\n
+    text += `\n每天一句英语学习：
 『每日英语（${dayjs(dayEnglish.date).format('ll')}』${dayEnglish.content}`
   }
 

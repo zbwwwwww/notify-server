@@ -16,7 +16,8 @@ const WEEKS: { [key: number]: string } = {
 }
 
 export const weekToday = () => {
-  const week = dayjs().get('days')
+  const week = dayjs().day()+1
+  console.log("dayjs.day()"+week);
   return WEEKS[week]
 }
 export const halfDayJudge  = () => {

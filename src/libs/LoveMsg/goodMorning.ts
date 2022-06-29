@@ -23,7 +23,7 @@ const goodWord = async () => {
       API.getNetEaseCloud(), // 网易云热评
       API.getDayEnglish(), // 每日英语
     ])
-    console.log(dataSource)
+    // console.log(dataSource)
     // 过滤掉异常数据
     const [sayLove, caiHongpi, oneWord, songLyrics, oneMagazines, netEaseCloud, dayEnglish] =
       dataSource.map((n) => (n.status === 'fulfilled' ? n.value : null))
@@ -52,10 +52,15 @@ const goodWord = async () => {
 const weatherInfo = async () => {
   try {
     const weather = await API.getWeather(CONFIG.city_name)
+    console.log("weather:"+weather)
     if (weather) {
+      
+      console.log("weather.week"+weather.week)
       const lunarInfo = await API.getLunarDate(weather.date)
+      
+      console.log("lunarInfo"+lunarInfo)
       const template = textCardTemplate({ ...weather, lunarInfo })
-      console.log('weatherInfo', template)
+      // console.log('weatherInfo', template)
 
       // 发送消息
       await wxNotify(template)
