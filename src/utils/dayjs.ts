@@ -16,7 +16,12 @@ const WEEKS: { [key: number]: string } = {
 }
 
 export const weekToday = () => {
-  const week = dayjs().day()+1
+  let hour = dayjs().hour();
+  let week =dayjs().day();
+  if(hour<24 && hour >20){
+    week+=1; 
+  }
+  console.log("dayjs.hour()"+hour);
   console.log("dayjs.day()"+week);
   return WEEKS[week]
 }
