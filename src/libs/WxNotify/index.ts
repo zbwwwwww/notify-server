@@ -10,7 +10,7 @@ import { postMsg } from './postMsg'
 // 读取 .env环境变量
 dotenv.config()
 const { WX_COMPANY_ID, WX_APP_ID, WX_APP_SECRET } = process.env
-console.log({ WX_COMPANY_ID, WX_APP_ID, WX_APP_SECRET })
+// console.log({ WX_COMPANY_ID, WX_APP_ID, WX_APP_SECRET })
 
 // 主函数
 export async function wxNotify(config: any) {

@@ -33,6 +33,12 @@ enum LoveMsgURL {
   joke = 'http://api.tianapi.com/joke/index',
   // 一言
   oneWord = 'https://v1.hitokoto.cn/?encode=json',
+   // 舔狗日记
+   tianGou = 'http://api.tianapi.com/tiangou/index',
+  //励志古言
+   liZhiGuYan = 'http://api.tianapi.com/lzmy/index',
+  //经典对联
+   duiLian = 'http://api.tianapi.com/duilian/index',
 }
 
 class API {
@@ -130,6 +136,24 @@ class API {
       console.log(error)
       return null
     }
+  }
+
+  // 舔狗日记
+  async getTianGou() {
+    const res = await getTian<SayloveProps[]>({ url: LoveMsgURL.tianGou })
+    return res?.[0]
+  }
+
+  // 励志古言
+  async getLiZhiGuYan() {
+    const res = await getTian<InspirationalWordProps[]>({ url: LoveMsgURL.liZhiGuYan })
+    return res?.[0]
+  }
+
+  // 经典对联
+  async getDuilian() {
+    const res = await getTian<InspirationalWordProps[]>({ url: LoveMsgURL.duiLian })
+    return res?.[0]
   }
 }
 

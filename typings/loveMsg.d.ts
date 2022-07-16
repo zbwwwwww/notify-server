@@ -112,7 +112,7 @@ interface ResLunarDateProps {
   jieqi: string
 }
 
-// 土味情话
+// 土味情话、舔狗日记
 interface SayloveProps {
   content: string
 }
@@ -138,6 +138,11 @@ interface OneWordProps {
   creator: string
 }
 
+// 对联
+interface DuiLian {
+  content: string
+}
+
 /**
  * 模板
  */
@@ -156,4 +161,7 @@ type TextTemplateProps = {
   oneMagazines: OneMagazines | null
   netEaseCloud: NetEaseCloudProps | null
   dayEnglish: ResEnglishProps | null
+  tianGou: SayloveProps | null
+  liZhiGuYan: InspirationalWordProps | null
+  duiLian: DuiLian | null
 }

@@ -25,7 +25,7 @@ instance.interceptors.response.use(
 )
 
 const request = <T = any>(config: AxiosRequestConfig, options?: AxiosRequestConfig): Promise<T> => {
-  console.log('config', config)
+  // console.log('config', config)
   if (typeof config === 'string') {
     if (!options) {
       return instance.request<T, T>({

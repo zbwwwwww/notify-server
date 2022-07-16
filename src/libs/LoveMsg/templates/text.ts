@@ -6,7 +6,7 @@
 import dayjs, { weekToday } from '../../../utils/dayjs'
 
 export const textTemplate = (data: TextTemplateProps) => {
-  const { caiHongpi, sayLove, songLyrics, oneMagazines, netEaseCloud, oneWord, dayEnglish } = data
+  const { caiHongpi, sayLove, songLyrics, oneMagazines, netEaseCloud, oneWord, dayEnglish, tianGou,liZhiGuYan,duiLian } = data
 
   let text = '早安呀，我可爱的小楠宝贝~\n'
 
@@ -24,31 +24,38 @@ export const textTemplate = (data: TextTemplateProps) => {
 嗯哼哼~今天可是${week}哦，上班别迟到了哦~`
   }
 
-//   if (caiHongpi) {
-//     text += `
-// ${caiHongpi.content}\n`
-//   }
-
   // 诗句
   if (songLyrics) {
-    text += `\n请欣赏今日宋词：
-『${songLyrics.source}』${songLyrics.content}\n`
+    text += `\n请欣赏今日晨间情话：
+  ${tianGou?.content}\n`
   }
 
-  if (oneMagazines) {
-    text += `\n请欣赏ONE杂志语录：
-『ONE杂志』${oneMagazines.word}\n`
+  if(liZhiGuYan) {
+    text += `请欣赏今日励志古言：
+    『名言』${liZhiGuYan.saying}
+    『翻译』${liZhiGuYan.transl}
+    『作者』${liZhiGuYan.source}\n`
   }
 
   if (netEaseCloud) {
-    text += `\n今日份网易云音乐热评：
+    text += `今日份网易云音乐热评：
 『网易云音乐热评』${netEaseCloud.content}————${netEaseCloud.source}\n`
   }
 
+  if (duiLian) {
+    text += `每日一句经典中华文化对联：
+『经典对联』${duiLian.content}\n`
+  }
+  
   // 每日英语
   if (dayEnglish) {
-    text += `\n每天一句英语学习：
-『每日英语（${dayjs(dayEnglish.date).format('ll')}』${dayEnglish.content}`
+    text += `每天一句英语学习：
+『每日英语』${dayEnglish.content}————${dayEnglish.note}`
+  }
+
+  if (oneMagazines) {
+    text += `请欣赏ONE杂志语录：
+『ONE杂志』${oneMagazines.word}\n`
   }
 
   return {
