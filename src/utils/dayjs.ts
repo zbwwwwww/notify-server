@@ -12,7 +12,7 @@ const WEEKS: { [key: number]: string } = {
   4: '星期四',
   5: '星期五',
   6: '星期六',
-  0: '星期日',
+  7: '星期日',
 }
 
 export const weekToday = () => {
