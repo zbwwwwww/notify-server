@@ -50,7 +50,7 @@ export const textTemplate = (data: TextTemplateProps) => {
   // 每日英语
   if (dayEnglish) {
     text += `每天一句英语学习：
-『每日英语』${dayEnglish.content}————${dayEnglish.note}`
+『每日英语』${dayEnglish.content}————${dayEnglish.note}\n`
   }
 
   if (oneMagazines) {
